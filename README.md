@@ -1,5 +1,5 @@
 # InternetDownAlarm
-Says "Internet is not working" until there is no internet access
+Says "Internet is not working" until there is internet access
 
 After cloning the repo do the following:
 
