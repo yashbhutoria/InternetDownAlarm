@@ -18,12 +18,14 @@ def internet(host="1.1.1.1", port=53, timeout=3):
         return False
 
 def main():
-    while True:
-        if not internet():
-            speak("Internet is not working",1)
-        else:
-            print("Internet is Working")
-
-
+	flag= True	
+	while True:
+		if internet() and flag:
+			print("Internet is Working")
+			flag = False
+		elif not internet():
+			speak("Internet is not working",1)
+			flag = True
+			
 if __name__ == "__main__":
     main()
