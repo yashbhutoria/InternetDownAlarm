@@ -16,18 +16,16 @@ def internet(host="1.1.1.1", port=53, timeout=3):
     except Exception as ex:
         print(ex)
         return False
+
 def main():
-	f=0	
+	flag= True	
 	while True:
-		if not internet():
+		if internet() and flag:
+			print("Internet is Working")
+			flag = False
+		elif not internet():
 			speak("Internet is not working",1)
-			f=0
-		else:
-			if f==0: // it was printing sm thing many times  
-				print("Internet is Working....") 
-				f=1
-
-
-
+			flag = True
+			
 if __name__ == "__main__":
     main()
